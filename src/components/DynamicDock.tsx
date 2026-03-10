@@ -1,6 +1,9 @@
 import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import { ShoppingCart, Compass, Activity, Crosshair } from 'lucide-react';
+
+gsap.registerPlugin(ScrollToPlugin);
 
 export const DynamicDock = () => {
     const dockRef = useRef<HTMLDivElement>(null);
@@ -39,9 +42,9 @@ export const DynamicDock = () => {
     }, []);
 
     const items = [
-        { icon: <Compass size={20} />, label: "Origen" },
-        { icon: <Activity size={20} />, label: "Escáner" },
-        { icon: <Crosshair size={20} />, label: "Precisión" },
+        { icon: <Compass size={20} />, label: "Origen", targetId: "modulo-origen" },
+        { icon: <Activity size={20} />, label: "Escáner", targetId: "modulo-escaner" },
+        { icon: <Crosshair size={20} />, label: "Precisión", targetId: "modulo-precision" },
     ];
 
     return (
@@ -54,6 +57,13 @@ export const DynamicDock = () => {
                     {items.map((item, idx) => (
                         <button
                             key={idx}
+                            onClick={() => {
+                                gsap.to(window, {
+                                    scrollTo: { y: '#' + item.targetId, autoKill: false },
+                                    duration: 1.2,
+                                    ease: 'power3.inOut'
+                                });
+                            }}
                             className="dock-item flex h-12 w-12 items-center justify-center rounded-full bg-white/5 text-[var(--color-bone)] transition-colors hover:bg-white/10 hover:text-white group relative"
                         >
                             {item.icon}
@@ -67,7 +77,7 @@ export const DynamicDock = () => {
                 {/* The North Star - Primary CTA */}
                 <button className="dock-item relative overflow-hidden flex h-12 px-6 items-center justify-center rounded-full bg-[var(--color-blood)] text-white font-sans font-medium hover:bg-red-700 glow-blood">
                     <span className="relative z-10 flex items-center gap-2 text-sm uppercase tracking-wider">
-                        <ShoppingCart size={16} /> Ordenar Ahora
+                        <ShoppingCart size={16} /> Ordenar
                     </span>
                 </button>
             </div>

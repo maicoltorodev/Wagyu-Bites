@@ -8,7 +8,7 @@
   --font-serif: "Cormorant Garamond", serif;
   --font-sans: "Geist", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
-  
+
   --breakpoint-tablet: 1024px;
 }
 
@@ -24,7 +24,26 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Ocultar barra de scroll en toda la aplicación */
+/* Chrome, Safari y Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Firefox, IE, Edge */
+* {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
 /* Typography Fluid Scaling */
+.text-fluid-hero {
+  font-size: clamp(4rem, 18vw, 14rem);
+  line-height: 0.8;
+}
+
 .text-fluid-h1 {
   font-size: clamp(3rem, 8vw, 8rem);
   line-height: 1;
