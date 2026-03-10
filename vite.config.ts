@@ -11,7 +11,7 @@ export default defineConfig({
     tailwindcss(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['logo.png'],
+      includeAssets: ['logo.png', 'pwa-icons/icon-192x192.png', 'pwa-icons/icon-512x512.png', 'pwa-icons/favicon.ico'],
       manifest: {
         name: 'Wagyu Bites Premium',
         short_name: 'Wagyu',
@@ -20,22 +20,9 @@ export default defineConfig({
         background_color: '#080808',
         display: 'standalone',
         icons: [
-          {
-            src: 'logo.png',
-            sizes: '192x192',
-            type: 'image/png'
-          },
-          {
-            src: 'logo.png',
-            sizes: '512x512',
-            type: 'image/png'
-          },
-          {
-            src: 'logo.png',
-            sizes: '512x512',
-            type: 'image/png',
-            purpose: 'any maskable'
-          }
+          { src: 'pwa-icons/icon-192x192.png', sizes: '192x192', type: 'image/png' },
+          { src: 'pwa-icons/icon-512x512.png', sizes: '512x512', type: 'image/png' },
+          { src: 'pwa-icons/icon-512x512.png', sizes: '512x512', type: 'image/png', purpose: 'any maskable' }
         ]
       }
     })
