@@ -91,7 +91,7 @@ export const DynamicDock = () => {
                     ref={orderBtnRef}
                     onClick={() => {
                         const phoneNumber = '3133487894';
-                        const message = 'Hola, me gustaria un corte de carne!';
+                        const message = 'Hola, me gustaría un corte de carne!';
                         const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
                         window.open(whatsappUrl, '_blank');
                     }}
