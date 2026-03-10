@@ -89,6 +89,12 @@ export const DynamicDock = () => {
                 {/* The North Star - Primary CTA */}
                 <button
                     ref={orderBtnRef}
+                    onClick={() => {
+                        const phoneNumber = '3133487894';
+                        const message = 'Hola, me gustaria un corte de carne!';
+                        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+                        window.open(whatsappUrl, '_blank');
+                    }}
                     className="relative overflow-hidden flex h-12 px-6 items-center justify-center rounded-full bg-[var(--color-blood)] text-white font-sans font-medium hover:bg-red-700 glow-blood"
                 >
                     <span className="relative z-10 flex items-center gap-2 text-sm uppercase tracking-wider">
