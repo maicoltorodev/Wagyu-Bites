@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --color-obsidian: oklch(12% 0.01 280);
+  --color-blood: oklch(62% 0.28 25);
+  --color-bone: oklch(90% 0.02 80);
+
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Geist", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --breakpoint-tablet: 1024px;
+}
+
+:root {
+  background-color: var(--color-obsidian);
+  color: var(--color-bone);
+  font-family: var(--font-sans);
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Typography Fluid Scaling */
+.text-fluid-h1 {
+  font-size: clamp(3rem, 8vw, 8rem);
+  line-height: 1;
+}
+
+.text-fluid-h2 {
+  font-size: clamp(2rem, 5vw, 5rem);
+  line-height: 1.1;
+}
+
+/* Custom Effects */
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glow-blood {
+  filter: drop-shadow(0 0 12px oklch(62% 0.28 25 / 0.6));
+}
