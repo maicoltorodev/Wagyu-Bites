@@ -7,6 +7,7 @@ gsap.registerPlugin(ScrollToPlugin);
 
 export const DynamicDock = () => {
     const dockRef = useRef<HTMLDivElement>(null);
+    const orderBtnRef = useRef<HTMLButtonElement>(null);
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -36,6 +37,17 @@ export const DynamicDock = () => {
                     gsap.to(item, { scale: 1, duration: 0.3 });
                 });
             });
+
+            // The North Star Pulsing Effect
+            if (orderBtnRef.current) {
+                gsap.to(orderBtnRef.current, {
+                    boxShadow: '0px 0px 25px 5px rgba(255, 42, 0, 0.6)',
+                    duration: 1.5,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: 'sine.inOut',
+                });
+            }
         }, dockRef);
 
         return () => ctx.revert();
@@ -75,7 +87,10 @@ export const DynamicDock = () => {
                 </div>
 
                 {/* The North Star - Primary CTA */}
-                <button className="dock-item relative overflow-hidden flex h-12 px-6 items-center justify-center rounded-full bg-[var(--color-blood)] text-white font-sans font-medium hover:bg-red-700 glow-blood">
+                <button
+                    ref={orderBtnRef}
+                    className="relative overflow-hidden flex h-12 px-6 items-center justify-center rounded-full bg-[var(--color-blood)] text-white font-sans font-medium hover:bg-red-700 glow-blood"
+                >
                     <span className="relative z-10 flex items-center gap-2 text-sm uppercase tracking-wider">
                         <ShoppingCart size={16} /> Ordenar
                     </span>

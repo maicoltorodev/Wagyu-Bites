@@ -166,8 +166,7 @@ export const LiquidHero = () => {
                     <p className="hero-text-line font-sans text-sm md:text-base tracking-widest uppercase text-white/50 border border-white/10 rounded-xl bg-black/40 backdrop-blur-sm p-6 leading-relaxed relative overflow-hidden group">
                         {/* Glow accent */}
                         <span className="absolute inset-x-0 bottom-0 h-[2px] bg-[var(--color-blood)] glow-blood opacity-80" />
-                        Cada corte tiene sabor a hogar.<br />
-                        Porque sabemos lo importante que es compartir una buena comida, te ofrecemos lo mejor para que cada momento en tu mesa sea especial.
+                        Sabemos lo importante que es compartir una buena comida, te ofrecemos lo mejor para que cada momento en tu mesa sea especial.
                     </p>
                 </div>
             </div>

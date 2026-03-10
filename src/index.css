@@ -40,7 +40,7 @@ body {
 
 /* Typography Fluid Scaling */
 .text-fluid-hero {
-  font-size: clamp(4rem, 18vw, 14rem);
+  font-size: clamp(4rem, 10vw, 8rem);
   line-height: 0.8;
 }
 
