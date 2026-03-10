@@ -11,7 +11,7 @@ export default defineConfig({
     tailwindcss(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['logo.png', 'pwa-icons/icon-192x192.png', 'pwa-icons/icon-512x512.png', 'pwa-icons/favicon.ico'],
+      includeAssets: ['logo.webp', 'pwa-icons/icon-192x192.png', 'pwa-icons/icon-512x512.png', 'pwa-icons/favicon.ico'],
       manifest: {
         name: 'Wagyu Bites Premium',
         short_name: 'Wagyu',

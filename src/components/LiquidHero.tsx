@@ -133,11 +133,11 @@ export const LiquidHero = () => {
                         <div
                             className="hero-logo-mask absolute inset-0 bg-[var(--color-blood)] z-10"
                             style={{
-                                WebkitMaskImage: 'url(/logo.png)',
+                                WebkitMaskImage: 'url(/logo.webp)',
                                 WebkitMaskSize: 'contain',
                                 WebkitMaskRepeat: 'no-repeat',
                                 WebkitMaskPosition: 'center',
-                                maskImage: 'url(/logo.png)',
+                                maskImage: 'url(/logo.webp)',
                                 maskSize: 'contain',
                                 maskRepeat: 'no-repeat',
                                 maskPosition: 'center'
@@ -145,7 +145,7 @@ export const LiquidHero = () => {
                         />
                         {/* Imagen estructural base */}
                         <img
-                            src="/logo.png"
+                            src="/logo.webp"
                             alt="Wagyu Bites Logo"
                             className="w-full h-full object-contain opacity-0"
                         />
